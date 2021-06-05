@@ -39,6 +39,3 @@ deepspeed --num_gpus=2 run_clm.py \
 --seed 5 \
 --warmup_steps 10 \
 --train_file fb-2048.map >> /data/report.txt
-
-#just to make sure...
-kill -1 1
