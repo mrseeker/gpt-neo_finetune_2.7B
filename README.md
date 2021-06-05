@@ -28,21 +28,16 @@ aidungeon-2048.map is the original text adventure dataset without '<|startoftext
 
 # Instance setup
 
-The image I was using had multiple CUDA versions preinstalled, so first I select the right one:
+I am using a docker image as base, "nvidia/cuda:11.1.1-devel-ubuntu20.04"
+
+Using the following commands (found in run.sh) to automatically run a session:
+
 
 ```
-echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda/bin"' > /etc/environment
-echo 'LD_LIBRARY_PATH="/usr/local/cuda/lib64"' >> /etc/environment
-rm /usr/local/cuda
-ln -s /usr/local/cuda-11.1 /usr/local/cuda
-```
-
-Then relogin and install dependencies:
-
-```
+export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
 apt update
-apt upgrade
-apt install vim git python3.8 python3-numpy python3-pip cmake python3-arrow wget build-essential
+apt upgrade -y
+apt install -y nano git python3.8 python3-numpy python3-pip cmake python3-arrow wget build-essential
 pip3 install cython
 pip3 install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
 pip3 install pyarrow==0.17.1
