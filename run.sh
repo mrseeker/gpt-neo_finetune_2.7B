@@ -38,4 +38,4 @@ deepspeed --num_gpus=2 run_clm.py \
 --block_size 2048 \
 --seed 5 \
 --warmup_steps 10 \
---train_file fb-2048.map >> /data/report.txt
+--train_file fb-2048.map > /data/run.txt 2>&1
