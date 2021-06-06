@@ -8,8 +8,8 @@ pip3 install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f ht
 pip3 install pyarrow==0.17.1
 git clone https://github.com/microsoft/DeepSpeed/
 cd DeepSpeed
-TORCH_CUDA_ARCH_LIST="11.1" pip3 install .
-cd /media/data-volume
+TORCH_CUDA_ARCH_LIST="10.2" pip3 install .
+cd /media/data-volume/git
 pip3 install transformers
 pip3 install -r requirements.txt
 pip3 install datasets==1.5.0 pyarrow==0.17.1 packaging

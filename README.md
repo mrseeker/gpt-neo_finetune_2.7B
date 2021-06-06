@@ -28,7 +28,7 @@ aidungeon-2048.map is the original text adventure dataset without '<|startoftext
 
 # Instance setup
 
-I am using a docker image as base, "nvidia/cuda:11.1.1-devel-ubuntu20.04"
+I am using a docker image as base, "nvidia/cuda:10.2-base-ubuntu18.04"
 
 Using the following commands (found in run.sh) to automatically run a session:
 
