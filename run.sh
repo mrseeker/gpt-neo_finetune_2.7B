@@ -9,7 +9,7 @@ pip3 install pyarrow==0.17.1
 git clone https://github.com/microsoft/DeepSpeed/
 cd DeepSpeed
 TORCH_CUDA_ARCH_LIST="11.1" pip3 install .
-cd
+cd /data
 pip3 install transformers
 pip3 install -r requirements.txt
 pip3 install datasets==1.5.0 pyarrow==0.17.1 packaging
