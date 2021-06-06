@@ -9,11 +9,11 @@ pip3 install pyarrow==0.17.1
 git clone https://github.com/microsoft/DeepSpeed/
 cd DeepSpeed
 TORCH_CUDA_ARCH_LIST="11.1" pip3 install .
-cd /data
+cd /media/data-volume
 pip3 install transformers
 pip3 install -r requirements.txt
 pip3 install datasets==1.5.0 pyarrow==0.17.1 packaging
-ds_report > /data/report.txt
+ds_report > /media/data-volume/report.txt
 
 #CODE HERE
 deepspeed --num_gpus=2 run_clm.py \
@@ -24,7 +24,7 @@ deepspeed --num_gpus=2 run_clm.py \
 --fp16 \
 --overwrite_cache \
 --overwrite_output_dir \
---output_dir /data/finetuned \
+--output_dir /media/data-volume/finetuned \
 --validation_file validation.csv \
 --num_train_epochs 1 \
 --max_train_samples 99200 \
@@ -38,4 +38,4 @@ deepspeed --num_gpus=2 run_clm.py \
 --block_size 2048 \
 --seed 5 \
 --warmup_steps 10 \
---train_file fb-2048.map > /data/run.txt 2>&1
+--train_file fb-2048.map > /media/data-volume/run.txt 2>&1
